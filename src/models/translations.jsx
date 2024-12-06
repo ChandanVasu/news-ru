@@ -1,4 +1,4 @@
-export const russianTextMapping = {
+export const RussianTextMapping = {
     'News Portal': 'Новостной портал',
     'Back to articles': 'Назад к статьям',
     'Recommended Articles': 'Рекомендуемые статьи',
@@ -14,7 +14,7 @@ export const russianTextMapping = {
     'Latest news and updates from around the world': 'Последние новости и обновления со всего мира'
   };
   
-  export const categoryNameMapping = {
+  export const CategoryNameMapping = {
     'Recommend': 'Рекомендации',
     'Delicacy': 'Кулинария',
     'Travel': 'Путешествия',

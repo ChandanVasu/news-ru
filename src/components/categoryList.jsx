@@ -2,7 +2,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { categoryNameMapping } from "@/models/translations";
+import { CategoryNameMapping } from "@/models/translations";
 
 const categoryList = ({ currentCategory }) => {
   const [categoryList, setCategoryList] = useState([]);
@@ -50,7 +50,7 @@ const categoryList = ({ currentCategory }) => {
                   : "bg-gray-200"
               }`}
             >
-              {categoryNameMapping[category.name] || category.name}
+              {CategoryNameMapping[category.name] || category.name}
             </p>
           </Link>
         </div>
