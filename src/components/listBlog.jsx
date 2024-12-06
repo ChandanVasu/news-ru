@@ -19,7 +19,7 @@ const ListBlog = ({ category }) => {
           body: JSON.stringify({
             languageCode: "ru",
             pageIndex: 1,
-            oneTypeIds: [category],
+            oneTypeIds: [category || 0],
             pageSize: 100,
           }),
           cache: "force-cache",
