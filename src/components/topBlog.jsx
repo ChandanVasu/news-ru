@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
+import Link from "next/link";
 
 const TopBlog = () => {
   const [post, setPost] = useState([]);
@@ -38,7 +39,7 @@ const TopBlog = () => {
     const container = containerRef.current;
     if (!container || post.length === 0) return;
 
-    const postWidth = container.querySelector("div").offsetWidth;
+    const postWidth = container.querySelector("a").offsetWidth;
     const clientWidth = container.clientWidth;
 
     const scrollOnePost = () => {
@@ -61,19 +62,23 @@ const TopBlog = () => {
       style={{ scrollBehavior: "smooth" }}
     >
       {post.map((item) => (
-        <div
-          key={item.taskId}
+        <Link
           className="flex-shrink-0 relative overflow-hidden rounded-md"
+          href={{
+            pathname: `/blog/${item.taskId}`,
+            query: { lan: "ru", typesource: item.source },
+          }}
+          key={item.taskId}
         >
-          <h1 className="absolute bottom-5 left-5 text-white font-bold text-xl">
+          <h1 className="absolute bottom-5 left-5 text-white font-bold text-base md:text-xl">
             {item.title}
           </h1>
           <img
             src={item.imgUrl}
             alt={item.title}
-            className="h-[170px] w-[350px] sm:h-[270px] sm:w-[550px] rounded-md transition-border duration-300"
+            className="h-[170px] w-[250px] sm:h-[270px] sm:w-[550px] rounded-md transition-border duration-300"
           />
-        </div>
+        </Link>
       ))}
     </div>
   );
