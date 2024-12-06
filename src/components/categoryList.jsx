@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { CategoryNameMapping } from "@/models/translations";
 
-const categoryList = ({ currentCategory }) => {
+const CategoryList = ({ currentCategory }) => {
   const [categoryList, setCategoryList] = useState([]);
 
   const fetchCategoryList = async () => {
@@ -59,4 +59,4 @@ const categoryList = ({ currentCategory }) => {
   );
 };
 
-export default categoryList;
+export default CategoryList;
