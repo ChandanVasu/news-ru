@@ -30,23 +30,24 @@ const CategoryList = ({ currentCategory }) => {
     }
   };
 
-  if (!currentCategory) {
-    currentCategory = 0;
-  }
-
   useEffect(() => {
     fetchCategoryList();
-  }, []);
+  }, [currentCategory]);
 
   return (
     <div className="px-4 flex overflow-x-auto gap-2">
       {categoryList.map((category, index) => (
         <div key={index}>
-          <Link href={"/"}>
+          <Link
+            href={{
+              pathname: "/category/",
+              query: { id: category.id },
+            }}
+          >
             <p
-              className={`px-3 py-1 mb-3 hover:bg-slate-500 hover:text-white   rounded-lg ${
-                category.id === currentCategory
-                  ? "bg-red-800 text-white hover:bg-red-800"
+              className={`px-3 py-1 mb-3 hover:bg-red-800/40 hover:text-white rounded-lg ${
+                String(category.id) === String(currentCategory)
+                  ? "bg-red-800 text-white hover:bg-red-800/40"
                   : "bg-gray-200"
               }`}
             >

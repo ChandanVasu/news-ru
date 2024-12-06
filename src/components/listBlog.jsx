@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
-const ListBlog = () => {
+const ListBlog = ({ category }) => {
+  // Correctly destructure category from props
   const [post, setPost] = useState([]);
   const [postLimit, setPostLimit] = useState(8);
 
@@ -18,8 +19,8 @@ const ListBlog = () => {
           body: JSON.stringify({
             languageCode: "ru",
             pageIndex: 1,
-            oneTypeIds: [0],
-            pageSize: 100, // Fetch a larger batch to support dynamic loading
+            oneTypeIds: [category],
+            pageSize: 100,
           }),
           cache: "force-cache",
         }
@@ -33,29 +34,24 @@ const ListBlog = () => {
 
   useEffect(() => {
     fetchListBlog();
-  }, []);
+  }, [category]); // Ensure refetch if category changes
 
   const truncateTitle = (title, value) => {
     if (!title) return "No Title";
     return title.length > value ? title.slice(0, value) + "..." : title;
   };
 
-  // Handle scroll to load more posts
   const handleScroll = () => {
     const scrollPosition = window.scrollY + window.innerHeight;
     const bottom = document.documentElement.scrollHeight;
 
     if (scrollPosition >= bottom - 200) {
-      // Trigger when near bottom of the page
-      setPostLimit((prevLimit) => prevLimit + 8); // Increase post limit by 8
+      setPostLimit((prevLimit) => prevLimit + 8);
     }
   };
 
-  // Add scroll event listener
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
-    // Clean up event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -92,7 +88,6 @@ const ListBlog = () => {
             </Link>
           </div>
 
-          {/* Show image after every 3 posts */}
           {(index + 1) % 3 === 0 && (
             <div className="w-full flex justify-center mt-4">
               <img
