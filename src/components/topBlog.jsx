@@ -17,7 +17,7 @@ const TopBlog = () => {
           body: JSON.stringify({
             languageCode: "ru",
             pageIndex: 1,
-            pageSize: 8,
+            pageSize: 5,
             domainTag: "64305d92ef8e434ebab283ae6747745a",
           }),
           cache: "force-cache",
@@ -71,7 +71,7 @@ const TopBlog = () => {
           <img
             src={item.imgUrl}
             alt={item.title}
-            className="h-[170px] w-[350px] sm:h-{270px} sm:w-[550px] rounded-md transition-border duration-300"
+            className="h-[170px] w-[350px] sm:h-[270px] sm:w-[550px] rounded-md transition-border duration-300"
           />
         </div>
       ))}
