@@ -10,7 +10,7 @@ export default function Home() {
       <header className="shadow-header">
         <Header></Header>
       </header>
-      <div className="">
+      <div className="pb-4">
         <TopBlog></TopBlog>
         <CategoryList currentCategory={0}></CategoryList>
         <ListBlog></ListBlog>

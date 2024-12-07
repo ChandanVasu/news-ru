@@ -20,7 +20,7 @@ const ListBlog = ({ category }) => {
             languageCode: "ru",
             pageIndex: 1,
             oneTypeIds: [category || 0],
-            pageSize: 100,
+            pageSize: 40,
           }),
           cache: "force-cache",
         }
