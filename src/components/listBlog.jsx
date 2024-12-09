@@ -65,7 +65,7 @@ const ListBlog = ({ category }) => {
           <div className="mb-4">
             <Link
               href={{
-                pathname: `/blog/${item.taskId}`,
+                pathname: `/articles/${item.taskId}`,
                 query: { lan: "ru", typesource: item.source },
               }}
             >

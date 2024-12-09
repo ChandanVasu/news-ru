@@ -66,7 +66,7 @@ const TopBlog = () => {
         <Link
           className="flex-shrink-0 relative overflow-hidden rounded-md"
           href={{
-            pathname: `/blog/${item.taskId}`,
+            pathname: `/articles/${item.taskId}`,
             query: { lan: "ru", typesource: item.source },
           }}
           key={item.taskId}
