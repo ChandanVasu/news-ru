@@ -7,6 +7,12 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+export const metadata = {
+  title: "Новостной портал",
+  description:
+    "We strive to provide our readers with the most relevant and reliable news 24 hours a day. Our team of professional journalists works around the clock to keep you informed about the most important events in Russia and the world.",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

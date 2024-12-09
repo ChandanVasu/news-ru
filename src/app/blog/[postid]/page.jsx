@@ -1,4 +1,6 @@
 import ListBlog from "@/components/listBlog";
+import CategoryList from "@/components/categoryList";
+import TopBlog from "@/components/topBlog";
 
 export default async function Page({ params, searchParams }) {
   // Await the params before using its properties
@@ -36,6 +38,9 @@ export default async function Page({ params, searchParams }) {
   return (
     <div className="max-w-[640px] m-auto min-h-screen bg-white">
       <div>
+        <TopBlog></TopBlog>
+        <CategoryList currentCategory={0}></CategoryList>
+
         {blogData.map((post, index) => (
           <div key={index}>
             <h2 className="bg-red-700 min-h-12 flex items-center justify-center text-white font-bold text-xl px-4 py-1">
