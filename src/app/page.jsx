@@ -4,6 +4,7 @@ import Header from "@/components/header";
 import CategoryList from "@/components/categoryList";
 import ListBlog from "@/components/listBlog";
 
+
 export default function Home() {
   return (
     <div className="max-w-[640px] m-auto min-h-screen bg-white">

@@ -2,7 +2,9 @@ import ListBlog from "@/components/listBlog";
 import CategoryList from "@/components/categoryList";
 import TopBlog from "@/components/topBlog";
 import Header from "@/components/header";
-
+import ArticleTop from "@/models/ad/TopArt";
+import MidArticle from "@/models/ad/MidArt";
+import WebTop from "@/models/ad/WebTop";
 
 export default async function Page({ params, searchParams }) {
   // Await the params before using its properties
@@ -40,11 +42,11 @@ export default async function Page({ params, searchParams }) {
   return (
     <div className="max-w-[640px] m-auto min-h-screen bg-white">
       <div>
-      <Header></Header>
-
+        <Header></Header>
+        <WebTop></WebTop>
         <TopBlog></TopBlog>
         <CategoryList currentCategory={0}></CategoryList>
-
+        <ArticleTop></ArticleTop>
         {blogData.map((post, index) => (
           <div key={index}>
             <h2 className="bg-red-700 min-h-12 flex items-center justify-center text-white font-bold text-xl px-4 py-1">
@@ -58,6 +60,7 @@ export default async function Page({ params, searchParams }) {
             <p className="p-4">{post.content.slice(0, 1000)}</p>
           </div>
         ))}
+        <MidArticle></MidArticle>
       </div>
       <ListBlog />
     </div>

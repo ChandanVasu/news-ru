@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import CategoryMid from "@/models/ad/CategoryMid";
 
 const ListBlog = ({ category }) => {
   // Correctly destructure category from props
@@ -89,15 +90,11 @@ const ListBlog = ({ category }) => {
             </Link>
           </div>
 
-          {/* {(index + 1) % 3 === 0 && (
+          {(index + 1) % 3 === 0 && (
             <div className="w-full flex justify-center mt-4">
-              <img
-                src="https://sohpi.s3.ap-south-1.amazonaws.com/cee988ce-99d8-4d24-a472-28f5dfe3a0ad"
-                alt="Sponsored"
-                className="rounded-lg w-[400px] h-[250px] object-fill md:w-[600px] "
-              />
+              <CategoryMid />
             </div>
-          )} */}
+          )}
         </React.Fragment>
       ))}
     </div>
