@@ -19,6 +19,7 @@ const ListBlog = ({ category }) => {
           body: JSON.stringify({
             languageCode: "ru",
             pageIndex: 1,
+            domainTag: "64305d92ef8e434ebab283ae6747745a",
             oneTypeIds: [category || 0],
             pageSize: 40,
           }),
@@ -88,7 +89,7 @@ const ListBlog = ({ category }) => {
             </Link>
           </div>
 
-          {(index + 1) % 3 === 0 && (
+          {/* {(index + 1) % 3 === 0 && (
             <div className="w-full flex justify-center mt-4">
               <img
                 src="https://sohpi.s3.ap-south-1.amazonaws.com/cee988ce-99d8-4d24-a472-28f5dfe3a0ad"
@@ -96,7 +97,7 @@ const ListBlog = ({ category }) => {
                 className="rounded-lg w-[400px] h-[250px] object-fill md:w-[600px] "
               />
             </div>
-          )}
+          )} */}
         </React.Fragment>
       ))}
     </div>
