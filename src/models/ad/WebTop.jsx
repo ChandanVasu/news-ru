@@ -10,7 +10,7 @@ export default function WebTopBanner() {
         data-ad-client="ad-1733392"
         data-ad-slot="1733392"
       ></ins>
-      <Script>{`(MRGtag = window.MRGtag || []).push({})`}</Script>
+      <Script id="web-top-banner-script">{`(MRGtag = window.MRGtag || []).push({})`}</Script>
     </>
   );
 }

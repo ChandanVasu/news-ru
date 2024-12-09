@@ -10,7 +10,7 @@ export default function NativeAd() {
         data-ad-client="ad-1732555"
         data-ad-slot="1732555"
       ></ins>
-      <Script>{`(MRGtag = window.MRGtag || []).push({})`}</Script>
+      <Script id="native-ad-script">{`(MRGtag = window.MRGtag || []).push({})`}</Script>
     </>
   );
 }

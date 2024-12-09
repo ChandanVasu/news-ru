@@ -10,7 +10,7 @@ export default function CategoryTopAd() {
         data-ad-client="ad-1737469"
         data-ad-slot="1737469"
       ></ins>
-      <Script>{`(MRGtag = window.MRGtag || []).push({})`}</Script>
+      <Script id="category-top-ad-script">{`(MRGtag = window.MRGtag || []).push({})`}</Script>
     </>
   );
 }

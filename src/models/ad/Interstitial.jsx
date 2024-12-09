@@ -9,7 +9,7 @@ export default function InterstitialAd() {
         data-ad-client="ad-1732553"
         data-ad-slot="1732553"
       ></ins>
-      <Script>{`(MRGtag = window.MRGtag || []).push({})`}</Script>
+      <Script id="interstitial-ad-script">{`(MRGtag = window.MRGtag || []).push({})`}</Script>
     </>
   );
 }

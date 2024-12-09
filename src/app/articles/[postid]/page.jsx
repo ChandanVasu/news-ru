@@ -5,6 +5,7 @@ import Header from "@/components/header";
 import ArticleTop from "@/models/ad/TopArt";
 import MidArticle from "@/models/ad/MidArt";
 import WebTop from "@/models/ad/WebTop";
+import AdsNat from "@/models/ad/AdsNat";
 
 export default async function Page({ params, searchParams }) {
   // Await the params before using its properties
@@ -43,8 +44,8 @@ export default async function Page({ params, searchParams }) {
     <div className="max-w-[640px] m-auto min-h-screen bg-white">
       <div>
         <Header></Header>
-        <WebTop></WebTop>
         <TopBlog></TopBlog>
+        <WebTop></WebTop>
         <CategoryList currentCategory={0}></CategoryList>
         <ArticleTop></ArticleTop>
         {blogData.map((post, index) => (
@@ -52,6 +53,7 @@ export default async function Page({ params, searchParams }) {
             <h2 className="bg-red-700 min-h-12 flex items-center justify-center text-white font-bold text-xl px-4 py-1">
               {post.title}
             </h2>
+            <AdsNat></AdsNat>
             <img
               className="w-full h-[250px] px-4 pt-4 rounded-md"
               src={post.imgUrl}

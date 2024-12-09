@@ -10,7 +10,7 @@ export default function ArticleMidAd() {
         data-ad-client="ad-1737467"
         data-ad-slot="1737467"
       ></ins>
-      <Script>{`(MRGtag = window.MRGtag || []).push({})`}</Script>
+      <Script id="article-mid-ad-script">{`(MRGtag = window.MRGtag || []).push({})`}</Script>
     </>
   );
 }
