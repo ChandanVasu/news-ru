@@ -1,6 +1,8 @@
 import ListBlog from "@/components/listBlog";
 import CategoryList from "@/components/categoryList";
 import TopBlog from "@/components/topBlog";
+import Header from "@/components/header";
+
 
 export default async function Page({ params, searchParams }) {
   // Await the params before using its properties
@@ -38,6 +40,8 @@ export default async function Page({ params, searchParams }) {
   return (
     <div className="max-w-[640px] m-auto min-h-screen bg-white">
       <div>
+      <Header></Header>
+
         <TopBlog></TopBlog>
         <CategoryList currentCategory={0}></CategoryList>
 
